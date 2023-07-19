@@ -1,3 +1,4 @@
 .env
 birthday_bot.log
 database.db
+birthdays.json
