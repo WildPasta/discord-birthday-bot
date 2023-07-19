@@ -1,10 +1,22 @@
-import sys
-import sqlite3
-from datetime import datetime
-import init
-import discord
-from dotenv import load_dotenv
+###
+# birthday_buddy v1.0.1
+# Written by WildPasta
+# Purpose: wish a birthday in a Discord channel
+###
+
+# Python standard libraries
 import os
+import sys
+from datetime import datetime
+
+# Third-party libraries
+import discord
+import sqlite3
+from dotenv import load_dotenv
+
+# Local application imports
+import init
+
 
 version = "1.0.1"
 database = "database.db"
@@ -22,7 +34,7 @@ def main():
     @client.event
     async def on_ready():
         print(f'BirthdayBuddy v{version} bot has connected to Discord!')
-        logger.info(f'BirthdayBuddy v{version} bot has connected to Discord!')
+        logger.debug(f'BirthdayBuddy v{version} bot has connected to Discord!')
 
         today = datetime.today()
 
@@ -37,7 +49,7 @@ def main():
         cursor.close()
 
         logger.info("Birthdays have been requested from the database")
-        
+
         if birthdays_today:
             print("Birthdays today:")
             for discord_id in birthdays_today:
@@ -47,7 +59,7 @@ def main():
                 if channel:
                     message = f"🎉 Bon anniversaire <@{discord_id[0]}> ! 🎉"
                     await channel.send(message)
-
+        await client.close()
     client.run(DISCORD_TOKEN)
 
 if __name__ == "__main__":
