@@ -45,7 +45,7 @@ def main():
                 logger.info("Birthday today: " + str(discord_id[0]))
                 channel = client.get_channel(int(DISCORD_CHANNEL))
                 if channel:
-                    message = f"🎉 Bon anniversaire à <@{discord_id[0]}> ! 🎉"
+                    message = f"🎉 Bon anniversaire <@{discord_id[0]}> ! 🎉"
                     await channel.send(message)
 
     client.run(DISCORD_TOKEN)
