@@ -21,7 +21,7 @@ To add the cronjob, run `crontab -e` and add the following line:
 
 ```bash
 # Run every day at 10:00
-0 10 * * * /usr/bin/python3 /path/to/main.py
+0 10 * * * cd /path/where/you/cloned/discord-birthday-bot && /usr/bin/python3 /path/where/you/cloned/discord-birthday-bot/main.py
 ```
 
 You can check the list of existing cron jobs by running `crontab -l` on the terminal. 
