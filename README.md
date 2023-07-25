@@ -3,6 +3,8 @@
 ## Purpose
 
 The purpose of this bot is to tag users on their birthday.
+I couldn't find any bot where you give yourself the birthday date so I developed this one.
+If you need a bot where users add their own birthday using commands, there are already plenty of bots available.
 
 ## Setup
 
